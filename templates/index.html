@@ -72,8 +72,22 @@
             </button>
 
         </form>
+    <hr>
 
-    </div>
+        <h2>Saved Events</h2>
+
+        {% for event in events %}
+
+        <div class="event-card">
+
+        <h3>{{ event[1] }}</h3>
+
+        <p>Day: {{ event[2] }}</p>
+
+        <p>{{ event[3] }} - {{ event[4] }}</p>
+
+
+{% endfor %}
 
 </body>
 
