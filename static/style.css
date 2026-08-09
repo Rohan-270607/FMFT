@@ -175,3 +175,9 @@ button:active{
 .event-card p {
     margin: 4px 0;
 }
+.free-symbol {
+    color: #b80d3e;
+    font-size: 16px;
+    margin-right: 8px;
+    display: inline-block;
+}

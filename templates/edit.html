@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Event</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>EDIT EVENT</h1>
+
+        <form method="POST">
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label for="event_name">
+                        Event Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="event_name"
+                        name="event_name"
+                        value="{{ event[1] }}"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="day">
+                        Day
+                    </label>
+
+                    <select
+                        id="day"
+                        name="day"
+                        required>
+
+                        <option value="Sunday"
+                            {% if event[2] == "Sunday" %}selected{% endif %}>
+                            Sunday
+                        </option>
+
+                        <option value="Monday"
+                            {% if event[2] == "Monday" %}selected{% endif %}>
+                            Monday
+                        </option>
+
+                        <option value="Tuesday"
+                            {% if event[2] == "Tuesday" %}selected{% endif %}>
+                            Tuesday
+                        </option>
+
+                        <option value="Wednesday"
+                            {% if event[2] == "Wednesday" %}selected{% endif %}>
+                            Wednesday
+                        </option>
+
+                        <option value="Thursday"
+                            {% if event[2] == "Thursday" %}selected{% endif %}>
+                            Thursday
+                        </option>
+
+                        <option value="Friday"
+                            {% if event[2] == "Friday" %}selected{% endif %}>
+                            Friday
+                        </option>
+
+                        <option value="Saturday"
+                            {% if event[2] == "Saturday" %}selected{% endif %}>
+                            Saturday
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label for="start_time">
+                        Start Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="start_time"
+                        name="start_time"
+                        value="{{ event[3] }}"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="end_time">
+                        End Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="end_time"
+                        name="end_time"
+                        value="{{ event[4] }}"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Save Changes
+            </button>
+
+        </form>
+
+        <p>
+            <a href="{{ url_for('home') }}">
+                Back to Schedule
+            </a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
